@@ -1,0 +1,151 @@
+html,
+body {
+  direction: rtl;
+}
+div.control-popover {
+  right: auto !important;
+}
+div.control-popover.placement-left > div:before {
+  border-left: 9px solid rgba(0, 0, 0, 0.15);
+  border-right: none;
+  left: auto;
+  right: -9px;
+}
+div.control-popover.placement-left > div:after {
+  border-left: 8px solid #fff;
+  border-right: none;
+  left: auto;
+  right: -8px;
+}
+div.control-popover.placement-left .popover-head:before {
+  border-left: 8px solid #f9f9f9;
+  border-right: none;
+  left: auto;
+  right: -8px;
+}
+div.control-popover.placement-right > div:before {
+  border-left: none;
+  border-right: 9px solid rgba(0, 0, 0, 0.15);
+  left: -9px;
+  right: auto;
+}
+div.control-popover.placement-right > div:after {
+  border-left: none;
+  border-right: 8px solid #fff;
+  left: -8px;
+  right: auto;
+}
+div.control-popover.placement-right .popover-head:before {
+  border-left: none;
+  border-right: 8px solid #f9f9f9;
+  left: -8px;
+  right: auto;
+}
+div.control-popover.placement-bottom > div:before {
+  left: 14px;
+  right: auto;
+}
+div.control-popover.placement-bottom > div:after {
+  left: 15px;
+  right: auto;
+}
+div.control-popover.placement-bottom .popover-head:before {
+  left: 15px;
+  right: auto;
+}
+div.control-popover.placement-top > div:before {
+  left: 14px;
+  right: auto;
+}
+div.control-popover.placement-top > div:after {
+  left: 15px;
+  right: auto;
+}
+.fancy-layout .control-tabs.master-tabs > div > div.tabs-container > ul.nav-tabs > li a > span.title:before,
+.fancy-layout.control-tabs.master-tabs > div > div.tabs-container > ul.nav-tabs > li a > span.title:before {
+  transform: skewX(20deg);
+}
+.fancy-layout .control-tabs.master-tabs > div > div.tabs-container > ul.nav-tabs > li a > span.title:after,
+.fancy-layout.control-tabs.master-tabs > div > div.tabs-container > ul.nav-tabs > li a > span.title:after {
+  transform: skewX(-20deg);
+}
+.control-tabs.primary-tabs > ul.nav-tabs > li a > span.title:before,
+.control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:before,
+.control-tabs.primary-tabs > div > div > ul.nav-tabs > li a > span.title:before {
+  transform: skewX(20deg);
+}
+.control-tabs.primary-tabs > ul.nav-tabs > li a > span.title:after,
+.control-tabs.primary-tabs > div > ul.nav-tabs > li a > span.title:after,
+.control-tabs.primary-tabs > div > div > ul.nav-tabs > li a > span.title:after {
+  transform: skewX(-20deg);
+}
+.fancy-layout .control-tabs.secondary-tabs.secondary-content-tabs > div > ul.nav-tabs > li a > span.title:before,
+.fancy-layout.control-tabs.secondary-tabs.secondary-content-tabs > div > ul.nav-tabs > li a > span.title:before {
+  transform: skewX(20deg);
+}
+.fancy-layout .control-tabs.secondary-tabs.secondary-content-tabs > div > ul.nav-tabs > li a > span.title:after,
+.fancy-layout.control-tabs.secondary-tabs.secondary-content-tabs > div > ul.nav-tabs > li a > span.title:after {
+  transform: skewX(-20deg);
+}
+.select2-container--default {
+  direction: rtl;
+}
+.select2-container--open .select2-dropdown {
+  left: 0;
+  right: auto;
+  direction: rtl;
+}
+.control-filelist ul li.group[data-status="collapsed"] > h4 a:before,
+.control-filelist ul li.group[data-status="collapsed"] > div.group > h4 a:before {
+  transform: rotate(180deg) translate(-3px, 0);
+}
+.draggable-component-item > div::after,
+.component-list .components div.layout-cell > div::after,
+div.control-componentlist div.components div.layout-cell > div::after {
+  text-indent: 3px !important;
+  transform: rotate(180deg) !important;
+}
+.component-list .components div.layout div.layout-row div.layout-cell > div:before {
+  text-indent: 2px !important;
+  transform: rotate(-90deg) !important;
+}
+.clockpicker-popover {
+  right: auto;
+}
+.product-search > i.icon {
+  left: auto !important;
+  right: 15px !important;
+}
+.sp-container {
+  right: auto !important;
+  left: 0;
+}
+.beautifier-message-container,
+.beautifier-raw-content,
+[data-input-preset-type="url"] {
+  direction: ltr;
+}
+.beautifier-container {
+  direction: ltr;
+}
+.beautifier-container .beautifier-stacktrace-line-internal,
+.beautifier-container .beautifier-stacktrace-line-function,
+.beautifier-container .beautifier-file {
+  margin-right: auto;
+  margin-left: 55px;
+}
+.control-treeview ol > li > div > ul.submenu:after {
+  background-position: 0px top;
+}
+.control-treeview ol > li > div:active > ul.submenu:after {
+  background-position: 0px -77px;
+}
+.control-treeview ol > li > div:active > ul.submenu:before {
+  background-position: -100px -77px;
+}
+.control-tabs:before {
+  content: "\f105";
+}
+.control-tabs:after {
+  content: "\f104";
+}

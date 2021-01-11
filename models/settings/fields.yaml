@@ -1,0 +1,31 @@
+fields:
+    layout_mode:
+        label: octoberfa.rtler::lang.setting.layout_mode
+        type: dropdown
+        default: language
+        options:
+            never: octoberfa.rtler::lang.setting.never
+            always: octoberfa.rtler::lang.setting.always
+            language: octoberfa.rtler::lang.setting.language_based
+        span: auto
+
+    editor_mode:
+        label: octoberfa.rtler::lang.setting.editor_mode
+        type: dropdown
+        default: language
+        options:
+            never: octoberfa.rtler::lang.setting.never
+            always: octoberfa.rtler::lang.setting.always
+            language: octoberfa.rtler::lang.setting.language_based
+        span: auto
+        comment: octoberfa.rtler::lang.setting.editor_mode_comment
+    markdown_editor_mode:
+        label: octoberfa.rtler::lang.setting.markdown_editor_mode
+        type: dropdown
+        default: language
+        options:
+            never: octoberfa.rtler::lang.setting.never
+            always: octoberfa.rtler::lang.setting.always
+            language: octoberfa.rtler::lang.setting.language_based
+        span: auto
+        comment: octoberfa.rtler::lang.setting.markdown_editor_mode_comment

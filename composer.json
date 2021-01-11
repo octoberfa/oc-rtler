@@ -1,0 +1,25 @@
+{
+    "name": "octoberfa/rtler",
+    "type": "october-plugin",
+    "description": "OctoberCms backend theme in rtl",
+    "keywords": [
+        "october",
+        "cms",
+        "rtl",
+        "plugin",
+        "backend"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sajjad Servatjoo",
+            "email": "sajjad.servatjoo@gmail.com",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "composer/installers": "~1.0",
+        "cssjanus/cssjanus": "^1.3.0"
+    }
+}
