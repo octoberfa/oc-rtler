@@ -2,8 +2,12 @@
 
 namespace OctoberFa\Rtler;
 
+use App;
 use Lang;
+use Event;
+use Config;
 use Backend;
+use Request;
 use OctoberFa\Rtler\Classes\UrlGenerator;
 use OctoberFa\Rtler\Models\Settings;
 use System\Classes\PluginBase;
@@ -41,15 +45,15 @@ class Plugin extends PluginBase
     public function register()
     {
         // Check if we are currently in backend module.
-        if (!\App::runningInBackend()) {
+        if (!App::runningInBackend()) {
             return;
         }
         $this->registerUrlGenerator();
         // Listen for `backend.page.beforeDisplay` event.
-        \Event::listen('backend.page.beforeDisplay', function ($controller, $action, $params) {
-            if (!\Request::ajax() && UrlGenerator::checkForRtl('layout_mode')) {
-                $controller->addCss(\Config::get('cms.pluginsPath') . ('/octoberfa/rtler/assets/css/rtler.css'));
-                $controller->addJs(\Config::get('cms.pluginsPath') . ('/octoberfa/rtler/assets/js/rtler.min.js'));
+        Event::listen('backend.page.beforeDisplay', function ($controller, $action, $params) {
+            if (!Request::ajax() && UrlGenerator::checkForRtl('layout_mode')) {
+                $controller->addCss(Config::get('cms.pluginsPath') . ('/octoberfa/rtler/assets/css/rtler.css'));
+                $controller->addJs(Config::get('cms.pluginsPath') . ('/octoberfa/rtler/assets/js/rtler.min.js'));
             }
         });
     }
@@ -104,12 +108,11 @@ class Plugin extends PluginBase
 
     public function registerSettings()
     {
-        // dd(Lang::get('octoberfa.rtler::lang'));
         return [
             'rtler' => [
                 'label'       => 'octoberfa.rtler::lang.setting.menu',
                 'description' => 'octoberfa.rtler::lang.setting.description',
-                'category'    => 'octoberfa.rtler::lang.setting.category',
+                'category'    => 'OctoberFa',
                 'icon'        => 'icon-anchor',
                 'class'       => 'OctoberFa\Rtler\Models\Settings',
                 'order'       => 500,

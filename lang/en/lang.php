@@ -6,7 +6,7 @@ return [
         'description' => 'Change backend layout to rtl',
     ],
     'setting' => [
-        'menu' => 'Settings',
+        'menu' => 'Rtler',
         'description' => 'Manage OctoberFa Rtler Settings.',
         'category' => 'OctoberFa',
         'layout_mode' => 'Change backend layout mode',

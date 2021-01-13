@@ -6,6 +6,7 @@ use App;
 use File;
 use Config;
 use Request;
+use Event;
 use Illuminate\Routing\UrlGenerator as baseGenerator;
 use OctoberFa\Rtler\Models\Settings;
 use RainLab\Translate\Classes\Translator;
@@ -43,7 +44,6 @@ class UrlGenerator extends baseGenerator
      */
     public function asset($path, $secure = null)
     {
-
         if ($this->isValidUrl($path)) return $path;
         if (self::checkForRtl('editor_mode') || self::checkForRtl('markdown_editor_mode')) {
             if (strpos($path, 'modules/backend/formwidgets/codeeditor/assets/js/build-min.js')) {
@@ -59,10 +59,9 @@ class UrlGenerator extends baseGenerator
             if (!strpos($path, '/octoberfa/rtler/assets/css/rtler.css')) {
                 $backendUri = Config::get('cms.backendUri', 'backend');
                 $requestUrl = Request::url();
-                if (File::exists(
-                    base_path(dirname($path)) . '.rtl.' . File::extension($path)
-                )) {
-                    $path = dirname($path) . '.rtl.' . File::extension($path);
+                $rtlFilePath = base_path(dirname($path)) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.rtl.' . File::extension($path);
+                if (File::exists($rtlFilePath)) {
+                    $path = dirname($path) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.rtl.' . File::extension($path);
                 } else if (File::extension($path) == 'css' && (strpos($requestUrl, $backendUri) || strpos($path, 'plugins/') || strpos($path, 'modules/'))) {
                     $path = CssFlipper::flipCss($path);
                 }
@@ -87,10 +86,11 @@ class UrlGenerator extends baseGenerator
         if (!strpos($path, '/octoberfa/rtler/assets/css/rtler.css')) {
             $backendUri = Config::get('cms.backendUri', 'backend');
             $requestUrl = Request::url();
-            if (File::exists(
-                base_path(dirname($path)) . '.rtl.' . File::extension($path)
-            )) {
-                $path = dirname($path) . '.rtl.' . File::extension($path);
+            // $absulutePath = base_path($path);
+            $rtlFilePath = base_path(dirname($path)) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.rtl.' . File::extension($path);
+
+            if (File::exists($rtlFilePath)) {
+                $path = dirname($path) . '/' . pathinfo($path, PATHINFO_FILENAME) . '.rtl.' . File::extension($path);
             } else if (File::extension($path) == 'css' && (strpos($requestUrl, $backendUri) || strpos($path, 'plugins/') || strpos($path, 'modules/'))) {
                 $path = CssFlipper::flipCss($path);
             }
